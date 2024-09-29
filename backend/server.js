@@ -1,36 +1,48 @@
 import express from 'express';
-const app = express();
-import router from './routes/index.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import router from './routes/index.js';
+
 dotenv.config();
-app.use(express.json())
 
-const PORT = process.env.PORT || 5000
+const app = express();
+app.use(express.json());
 
-app.get("/", function (req,res){
+// Fix __dirname for ES6 modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Serve static files (if you're using a frontend like React)
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Main route to serve frontend
+app.get("/", function (req, res) {
   res.sendFile(
-  path.join(__dirname,"../frontend/build/index.html"),
-  function (err) {
-    if (err) {
-   res.status(500).send(err);
+    path.join(__dirname, "../frontend/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
     }
-  }
-);
+  );
 });
 
-//routes
-app.use('/api', router)
+// Use the API routes
+app.use('/api', router);
 
-
-mongoose.connect(process.env.MONGO_URI)
+// MongoDB connection
+const PORT = process.env.PORT || 5000;
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('connected to database')
-    // listen to port
+    console.log('Connected to database');
+    // Start server
     app.listen(PORT, () => {
-      console.log('listening for requests on port', PORT)
-    })
+      console.log(`Server is running on port ${PORT}`);
+    });
   })
   .catch((err) => {
-    console.log(err)
-  }) 
+    console.error('Database connection error:', err);
+  });

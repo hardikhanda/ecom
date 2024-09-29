@@ -1,28 +1,28 @@
-import JwtService from '../services/JwtService.js';
+import jwt from 'jsonwebtoken';
 
-const auth = async (req, res, next) => {
-    let authHeader = req.headers.authorization;
-    console.log(authHeader);
-    if (!authHeader) {
-        return next('unAuthorized');
-    }
+// Middleware to authenticate user
+const auth = (req, res, next) => {
+  // Get the token from the Authorization header and remove 'Bearer ' prefix
+  const authHeader = req.header('Authorization');
+  const token = authHeader && authHeader.split(' ')[1];  // Extract the token from 'Bearer <token>'
 
-    const token = authHeader.split(' ')[1];
+  // Check if the token exists
+  if (!token) {
+    return res.status(401).json({ message: 'No token, authorization denied' });
+  }
 
-    try {
-        const { _id, role } = await JwtService.verify(token);
-        const user = {
-            _id,
-            role
-        }
-        console.log(user);
-        req.user = user;
-        next();
+  try {
+    // Verify the token using the secret
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    
+    // Attach user ID to request
+    req.userId = decoded.id;
 
-    } catch(err) {
-        return next('unAuthorized');
-    }
-
-}
+    // Move to the next middleware/controller
+    next();
+  } catch (err) {
+    res.status(401).json({ message: 'Invalid token' });
+  }
+};
 
 export default auth;

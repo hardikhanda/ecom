@@ -1,26 +1,17 @@
 import express from 'express';
+import userRoutes from './userRoutes.js';
+import productRoutes from './productRoutes.js';
+import orderRoutes from './orderRoutes.js';
+import reviewRoutes from './reviewRoutes.js';
+import cartRoutes from './cartRoutes.js';
+
 const router = express.Router();
-import registerController from '../controllers/auth/registerController.js';
-import loginController from '../controllers/auth/loginController.js';
-import auth from '../middleware/auth.js';
-import userController from '../controllers/auth/userController.js';
-import refreshController from '../controllers/auth/refreshController.js';
 
-router.post('/register', registerController.register);
-
-router.post('/login', loginController.login);
-
-router.post('/logout', auth, loginController.logout);
-
-router.get('/me', auth, userController.me);
-
-router.post('/refresh', refreshController.refresh);
-
-
-
-
-// router.post('/refresh', refreshController.refresh);
-// router.get('/me', auth, userController.me);
-
+// Mount the routes to their respective paths
+router.use('/users', userRoutes);
+router.use('/products', productRoutes);
+router.use('/orders', orderRoutes);
+router.use('/reviews', reviewRoutes);
+router.use('/cart', cartRoutes);
 
 export default router;
