@@ -1,0 +1,113 @@
+[
+    {
+      "name": "Sony Bravia 55-inch 4K TV",
+      "description": "A high-quality 55-inch 4K smart TV with HDR support.",
+      "price": 999.99,
+      "category": "Television",
+      "brand": "Sony",
+      "stock": 50,
+      "image": ["https://m.media-amazon.com/images/I/819733naKAL.jpg"],
+      "rating": 4.5,
+      "numReviews": 120
+    },
+    {
+      "name": "Apple iPhone 15",
+      "description": "The latest Apple iPhone with an A15 Bionic chip and 5G support.",
+      "price": 799.99,
+      "category": "Smartphones",
+      "brand": "Apple",
+      "stock": 200,
+      "image": ["https://m.media-amazon.com/images/I/71d7rfSl0wL._AC_UF1000,1000_QL80_.jpg"],
+      "rating": 4.7,
+      "numReviews": 340
+    },
+    {
+      "name": "Samsung Galaxy S21",
+      "description": "Samsung's flagship smartphone with an AMOLED display and triple cameras.",
+      "price": 749.99,
+      "category": "Smartphones",
+      "brand": "Samsung",
+      "stock": 150,
+      "image": ["https://m.media-amazon.com/images/I/71SevKMKB6L._AC_UF1000,1000_QL80_.jpg"],
+      "rating": 4.6,
+      "numReviews": 290
+    },
+    {
+      "name": "Dell XPS 13 Laptop",
+      "description": "A high-performance ultrabook with a 13-inch InfinityEdge display.",
+      "price": 1299.99,
+      "category": "Laptops",
+      "brand": "Dell",
+      "stock": 70,
+      "image": ["https://example.com/images/dell-xps-13.jpg"],
+      "rating": 4.8,
+      "numReviews": 215
+    },
+    {
+      "name": "Bose QuietComfort 35 II",
+      "description": "Wireless noise-canceling headphones with up to 20 hours of battery life.",
+      "price": 299.99,
+      "category": "Headphones",
+      "brand": "Bose",
+      "stock": 120,
+      "image": ["https://images-cdn.ubuy.co.in/65aeeac4646762073d43d1d0-bose-quietcomfort-35-ii-wireless.jpg"],
+      "rating": 4.9,
+      "numReviews": 480
+    },
+    {
+      "name": "Sony PlayStation 5",
+      "description": "The latest gaming console from Sony with 4K gaming capabilities.",
+      "price": 499.99,
+      "category": "Gaming Consoles",
+      "brand": "Sony",
+      "stock": 30,
+      "image": ["https://m.media-amazon.com/images/I/51CqteUKtZL.jpg"],
+      "rating": 4.9,
+      "numReviews": 540
+    },
+    {
+      "name": "Apple MacBook Air M1",
+      "description": "The latest MacBook Air with the Apple M1 chip and up to 18 hours of battery life.",
+      "price": 999.99,
+      "category": "Laptops",
+      "brand": "Apple",
+      "stock": 100,
+      "image": ["https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UF1000,1000_QL80_.jpg"],
+      "rating": 4.8,
+      "numReviews": 320
+    },
+    {
+      "name": "Canon EOS R6",
+      "description": "A full-frame mirrorless camera with 20MP resolution and 4K video recording.",
+      "price": 2499.99,
+      "category": "Cameras",
+      "brand": "Canon",
+      "stock": 25,
+      "image": ["https://i1.adis.ws/i/canon/eos-r6-rf24-105mm-f4_7.1_is_stm_front-on_square_6412568cc0e7484b96bd55e43069a56c"],
+      "rating": 4.7,
+      "numReviews": 145
+    },
+    {
+      "name": "Samsung 65-inch QLED 8K TV",
+      "description": "A massive 8K QLED TV with AI upscaling and Quantum Dot technology.",
+      "price": 3499.99,
+      "category": "Television",
+      "brand": "Samsung",
+      "stock": 15,
+      "image": ["https://m.media-amazon.com/images/I/91w1KqMJSlL._AC_UF350,350_QL80_.jpg"],
+      "rating": 4.9,
+      "numReviews": 75
+    },
+    {
+      "name": "Microsoft Surface Pro 7",
+      "description": "A versatile 2-in-1 tablet and laptop with a 12.3-inch display.",
+      "price": 899.99,
+      "category": "Tablets",
+      "brand": "Microsoft",
+      "stock": 60,
+      "image": ["https://m.media-amazon.com/images/I/61qS1eDVy9S._AC_UF1000,1000_QL80_.jpg"],
+      "rating": 4.5,
+      "numReviews": 210
+    }
+  ]
+  

@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors'; // Import CORS
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -10,6 +11,9 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+// Enable CORS for all requests
+app.use(cors()); // This will allow requests from any origin
 
 // Fix __dirname for ES6 modules
 const __filename = fileURLToPath(import.meta.url);
@@ -35,7 +39,7 @@ app.use('/api', router);
 
 // MongoDB connection
 const PORT = process.env.PORT || 5000;
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to database');
     // Start server
